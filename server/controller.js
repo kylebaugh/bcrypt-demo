@@ -25,9 +25,9 @@ const handlerFunctions = {
         )
 
         if(valid){
-            res.send('success')
+            res.status(200).send('success')
         }else{
-            res.send('failure')
+            res.status(400).send('failure')
         }
 
     }

@@ -6,7 +6,7 @@ console.log("Seeding database ...")
 
 let i = 1
 
-while (i < 11){
+while (i < 5){
 
     const newUser = await User.create({
         username: `user${i}`,
@@ -15,3 +15,5 @@ while (i < 11){
 
     i++
 }
+
+await db.close()

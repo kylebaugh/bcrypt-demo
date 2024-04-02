@@ -2,7 +2,7 @@ import {DataTypes, Model} from 'sequelize'
 import connectToDB from './database.js'
 import util from 'util'
 
-export const db = await connectToDB('postgresql:///bcrypt')
+export const db = await connectToDB('postgresql:///bcrypt-demo')
 
 export class User extends Model {
     [util.inspect.custom]() {
