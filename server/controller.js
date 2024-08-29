@@ -17,14 +17,14 @@ const handlerFunctions = {
         // console.log(req.body)
         const {username, password} = req.body
 
-        const valid = await User.findOne({
+        const user = await User.findOne({
             where:{
                 username: username,
                 password: password
             }}
         )
 
-        if(valid){
+        if(user){
             res.status(200).send('success')
         }else{
             res.status(400).send('failure')
