@@ -9,20 +9,25 @@ function App() {
   const [password, setPassword] = useState('')
 
   const handleRegister = () => {
-    let bodyObj = {
-      username,
-      password
+    if(!username || !password){
+      alert('Both fields need data')
+    } else {
+
+      let bodyObj = {
+        username,
+        password
+      }
+
+      axios.post('/api/register', bodyObj)
+        .then((res) => {
+          console.log(res.data)
+
+          alert('registration complete')
+
+          setUsername('')
+          setPassword('')
+        })
     }
-
-    axios.post('/api/register', bodyObj)
-      .then((res) => {
-        console.log(res.data)
-
-        alert('registration complete')
-
-        setUsername('')
-        setPassword('')
-      })
 
   }
 
